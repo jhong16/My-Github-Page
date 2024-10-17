@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<button id="openPopup">Open Popup</button>
+<button id="openPopup">Contact</button>
 
 <div id="myPopup" class="popup">
   <div class="popup-content">
