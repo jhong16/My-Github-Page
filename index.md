@@ -3,17 +3,18 @@ layout: default
 title: Home
 ---
 
-<nav style="background-color: #333; padding: 10px;">
-  <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
-    <li style="float: left;"><a href="/" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Home</a></li>
-    <li style="float: right;"><a href="/contact" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Contact</a></li>
-    <li style="float: right;"><a href="https://github.com/jhong16" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">GitHub</a></li>
-  </ul>
-</nav>
+<button id="openPopup">Open Popup</button>
+
+<div id="myPopup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <p>This is your popup content!</p>
+  </div>
+</div>
 
 # Welcome!
 
-My name is Ji hann Hong. Please call me "Ji hann" (Jee-han).
+My name is Ji hann Hong (Jee-haan).
 
 I am a software engineer with 3+ years of experience in developing secure, high-performance applications using Java and Python. My career's domain is currently specialized in the security aspects of software, from PKI broadly to debugging Java runtime environments for TLSv1.3 cipher suites specifically.
 

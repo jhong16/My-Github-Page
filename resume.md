@@ -1,0 +1,14 @@
+---
+layout: default
+title: Resume
+---
+
+<nav style="background-color: #333; padding: 10px;">
+  <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+    <li style="float: left;"><a href="/" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Home</a></li>
+    <li style="float: right;"><a href="/contact" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Contact</a></li>
+    <li style="float: right;"><a href="https://github.com/jhong16" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">GitHub</a></li>
+  </ul>
+</nav>
+
+# Resume
