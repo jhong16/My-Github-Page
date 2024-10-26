@@ -3,15 +3,6 @@ layout: default
 title: Home
 ---
 
-<button id="openPopup">Contact</button>
-
-<div id="myPopup" class="popup">
-  <div class="popup-content">
-    <span id="closePopup" class="close">&times;</span>
-    <p>This is your popup content!</p>
-  </div>
-</div>
-
 # Welcome!
 
 My name is Ji hann Hong (Jee-haan).
