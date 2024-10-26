@@ -1,11 +1,93 @@
 <head>
-  <nav style="background-color: #333; padding: 10px;">
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
-      <li style="float: left;"><a href="/" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Ji hann Hong</a></li>
-      <li style="float: right;"><a href="/contact" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Contact</a></li>
-      <li style="float: right;"><a href="https://github.com/jhong16" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">GitHub</a></li>
-      <li style="float: right;"><a href="/resume" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Resume</a></li>
-      <li style="float: right;"><a href="/" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Home</a></li>
+  <style>
+    /* Base styling for navigation */
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    /* Style the nav items */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    ul li {
+      float: left;
+    }
+
+    ul li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Hamburger icon for mobile view */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      float: right;
+    }
+
+    /* Show the hamburger icon and hide the nav links on smaller screens */
+    @media (max-width: 600px) {
+      ul li {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      /* Show the nav links in a vertical layout when activated */
+      .responsive {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        top: 60px;
+        left: 0;
+      }
+
+      .responsive li {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <nav>
+    <!-- Brand name / Title -->
+    <a href="/" style="color: white; font-size: 18px; text-decoration: none;">Ji hann Hong</a>
+
+    <!-- Hamburger icon for mobile -->
+    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+
+    <!-- Navigation Links -->
+    <ul id="navbar">
+      <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="/resume" style="color: white; text-decoration: none;">Resume</a></li>
+      <li><a href="https://github.com/jhong16" style="color: white; text-decoration: none;">GitHub</a></li>
+      <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
     </ul>
   </nav>
+
+  <script>
+    /* JavaScript to toggle the menu */
+    function toggleMenu() {
+      var navbar = document.getElementById("navbar");
+      if (navbar.className === "") {
+        navbar.className = "responsive";
+      } else {
+        navbar.className = "";
+      }
+    }
+  </script>
 </head>
