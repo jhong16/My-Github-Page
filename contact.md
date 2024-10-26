@@ -43,7 +43,11 @@ title: Ji hann Hong | Contact
 <body>
   <!-- Display email and buttons -->
   <h2>Contact Me</h2>
-  <p>Click below to copy my email or start an email message directly.</p>
+  
+  <script type="text/javascript">
+    document.write('<a href="mailto:' + 'ji.hann.hong' + '@' + 'gmail.com">ji.hann.hong@gmail.com</a>');
+  </script>
+
 
   <!-- Button to copy email to clipboard -->
   <button class="button" onclick="copyEmail()">Copy Email</button>
