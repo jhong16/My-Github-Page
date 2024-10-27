@@ -7,45 +7,44 @@
       --on-large: 1024px;      /* Replace with Minima's $on-large breakpoint */
     }
 
-    /* Navbar container with wrapper styling */
+    /* Navbar container to center content */
     .nav-container {
       width: 100%;
+      background-color: #333; /* Full-width background */
+    }
+
+    /* Inner wrapper for content alignment and max width */
+    .nav-inner {
       max-width: calc(var(--content-width) - var(--spacing-unit));
       margin: 0 auto;
       padding: 0 calc(var(--spacing-unit) * 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       box-sizing: border-box;
     }
 
     /* Apply additional padding on larger screens */
     @media screen and (min-width: var(--on-large)) {
-      .nav-container {
+      .nav-inner {
         max-width: calc(var(--content-width) - (var(--spacing-unit) * 2));
         padding: 0 var(--spacing-unit);
       }
     }
 
-    /* Base styling for navigation */
-    nav {
-      background-color: #333;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Style the nav items */
-    ul {
+    /* Base styling for navigation items */
+    nav ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
 
-    ul li {
+    nav ul li {
       margin: 0;
     }
 
-    ul li a {
+    nav ul li a {
       display: block;
       color: white;
       text-align: center;
@@ -63,7 +62,7 @@
 
     /* Show the hamburger icon and hide the nav links on smaller screens */
     @media (max-width: 600px) {
-      ul {
+      nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -73,7 +72,7 @@
         left: 0;
       }
 
-      ul.responsive {
+      nav ul.responsive {
         display: flex;
       }
 
@@ -85,10 +84,10 @@
 </head>
 
 <body>
-  <!-- Navigation container to match Minima's wrapper width and padding -->
+  <!-- Navigation container to span full width -->
   <div class="nav-container">
-    <nav>
-      <!-- Brand name / Title -->
+    <!-- Inner wrapper to control content alignment -->
+    <div class="nav-inner">
       <a href="/" style="color: white; font-size: 18px; text-decoration: none;">Ji Hann Hong</a>
 
       <!-- Hamburger icon for mobile -->
@@ -101,7 +100,7 @@
         <li><a href="https://github.com/jhong16" style="color: white; text-decoration: none;">GitHub</a></li>
         <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </div>
 
   <script>
