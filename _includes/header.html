@@ -45,13 +45,9 @@
 
     .nav-inner ul li {
       margin: 0;
+      
+      
     }
-    
-    .current {
-      background-color: rgb(182, 181, 181);
-      color: rgb(6, 6, 6);
-    }
-    
     .nav-inner ul li a {
       display: block;
       color: white;
@@ -59,7 +55,11 @@
       padding: 14px 16px;
       text-decoration: none;
     }
-
+    
+    .nav-inner ul li a.current {
+      background-color: rgb(182, 181, 181);
+      color: rgb(6, 6, 6);
+    }
 
     /* Hamburger icon for mobile view */
     .hamburger {
@@ -105,10 +105,10 @@
 
       <!-- Navigation Links -->
       <ul id="navbar">
-        <li><a href="/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
-        <li><a href="/resume" class="{% if page.url == '/resume.html' %}current{% endif %}">Resume</a></li>
+        <li><a href="/" {% if page.url == '/' %} class="current" {% endif %}>Home</a></li>
+        <li><a href="/resume" {% if page.url == site.baseurl + '/resume/' %} class="current" {% endif %}>Resume</a></li>
         <li><a href="https://github.com/jhong16">GitHub</a></li>
-        <li><a href="/contact" class="{% if page.url == '/contact.html' %}current{% endif %}">Contact</a></li>
+        <li><a href="/contact" {% if page.url == site.baseurl + '/resume/' %} class="current" {% endif %}>Contact</a></li>
       </ul>
     </div>
   </div>
