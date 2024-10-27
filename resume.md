@@ -49,9 +49,9 @@ url: /resume
   }
 </style>
 
-<div class="pdf-container">
+<!-- <div class="pdf-container">
   <iframe src="/Ji_hann_Hong_Resume_Redacted_2024.pdf" class="pdf-viewer"></iframe>
-</div>
+</div> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
@@ -72,32 +72,37 @@ url: /resume
   let pageIsRendering = false;
   let pageNumPending = null;
 
-  // Render the page
-  function renderPage(num) {
-    pageIsRendering = true;
 
-    // Get page
+
+  function renderPage(num, scale = 1.5) {
     pdfDoc.getPage(num).then((page) => {
-      const viewport = page.getViewport({ scale: 1.5 });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+      const viewport = page.getViewport({ scale });
+      
+      pageIsRendering = true;
 
-      const renderCtx = {
-        canvasContext: ctx,
-        viewport,
-      };
+      // Get page
+      pdfDoc.getPage(num).then((page) => {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
 
-      page.render(renderCtx).promise.then(() => {
-        pageIsRendering = false;
+        const renderCtx = {
+          canvasContext: ctx,
+          viewport,
+        };
 
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;
-        }
+        page.render(renderCtx).promise.then(() => {
+          pageIsRendering = false;
+
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+
+        // Update page counters
+        document.getElementById('page-num').textContent = num;
       });
-
-      // Update page counters
-      document.getElementById('page-num').textContent = num;
     });
   }
 
@@ -123,6 +128,17 @@ url: /resume
     pageNum++;
     queueRenderPage(pageNum);
   });
+
+  // Example zoom control
+  document.getElementById('zoom-in').addEventListener('click', () => {
+    scale += 0.25;
+    renderPage(pageNum, scale);
+  });
+  document.getElementById('zoom-out').addEventListener('click', () => {
+    scale = Math.max(scale - 0.25, 0.5); // minimum zoom level
+    renderPage(pageNum, scale);
+  });
+
 
   // Get Document
   pdfjsLib.getDocument(url).promise.then((pdfDoc_) => {
