@@ -57,10 +57,15 @@
     }
     
     .nav-inner ul li a.current {
-      background-color: rgb(182, 181, 181);
-      color: rgb(6, 6, 6);
+      background-color: black;
+      border-radius: 10px;
+    }
+    
+    .nav-inner ul li a:hover {
+      color: lightgray;
     }
 
+    
     /* Hamburger icon for mobile view */
     .hamburger {
       display: none;
@@ -106,9 +111,9 @@
       <!-- Navigation Links -->
       <ul id="navbar">
         <li><a href="/" {% if page.url == '/' %} class="current" {% endif %}>Home</a></li>
-        <li><a href="/resume" {% if page.url == site.baseurl + '/resume/' %} class="current" {% endif %}>Resume</a></li>
+        <li><a href="/resume" {% if page.url == '/resume' %} class="current" {% endif %}>Resume</a></li>
         <li><a href="https://github.com/jhong16">GitHub</a></li>
-        <li><a href="/contact" {% if page.url == site.baseurl + '/resume/' %} class="current" {% endif %}>Contact</a></li>
+        <li><a href="/contact" {% if page.url == '/contact' %} class="current" {% endif %}>Contact</a></li>
       </ul>
     </div>
   </div>
