@@ -3,5 +3,5 @@
 ---
 
 @import
-  "skins/auto",
+  "skins/{{ default: 'auto' }}",
   "initialize";
