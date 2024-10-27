@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: Ji Hann Hong | Resume
 url: /resume
 ---

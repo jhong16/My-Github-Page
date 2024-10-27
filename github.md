@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: Ji Hann Hong | GitHub
 url: /github
 ---
