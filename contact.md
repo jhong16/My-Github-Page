@@ -53,6 +53,28 @@ url: /contact
       display: flex;
       gap: 5px;
     }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      /* Dark background and light text for main container */
+      .email-container {
+        background-color: #1f1f1f;
+        color: #e5e5e5;
+      }
+      
+      /* Email display box with dark theme */
+      .email-box {
+        background-color: #333;
+        color: #e5e5e5;
+        border: 1px solid #555;
+      }
+      
+      /* Dark mode for buttons */
+      .button {
+        background-color: #e5e5e5;
+        color: #333;
+      }
+    }
   </style>
 
   <script type="text/javascript">
@@ -96,8 +118,8 @@ url: /contact
     
     <!-- Buttons at the top right corner -->
     <div class="button-container">
-      <button class="button" onclick="copyEmail()">Copy Email</button>
-      <button class="button" onclick="mailTo()">Email Me</button>
+      <button class="button" onclick="copyEmail()">&#x29C9; Copy Email</button>
+      <button class="button" onclick="mailTo()">@ Email Me</button>
     </div>
   </div>
 </body>
