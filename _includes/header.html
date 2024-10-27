@@ -103,9 +103,6 @@
   <div class="nav-container">
     <!-- Inner wrapper to control content alignment -->
     <div class="nav-inner">
-      <p>Current URL: {{ page.url }}</p>
-      <p>Resume Check: {{ site.baseurl }}/resume vs {{ page.url }}</p>
-
       <a href="/" style="color: white; font-size: 18px; text-decoration: none;">Ji hann Hong</a>
 
       <!-- Hamburger icon for mobile -->
@@ -114,9 +111,9 @@
       <!-- Navigation Links -->
       <ul id="navbar">
         <li><a href="/" {% if page.url == '/' %}class="current"{% endif %}>Home</a></li>
-        <li><a href="/resume" {% if page.url == site.baseurl | append: '/resume' %}class="current"{% endif %}>Resume</a></li>
+        <li><a href="/resume" {% if page.url == '/resume.html' %}class="current"{% endif %}>Resume</a></li>
         <li><a href="https://github.com/jhong16">GitHub</a></li>
-        <li><a href="/contact" {% if page.url == site.baseurl | append: '/contact' %}class="current"{% endif %}>Contact</a></li>
+        <li><a href="/contact" {% if page.url == '/contact.html' %}class="current"{% endif %}>Contact</a></li>
       </ul>    
     </div>
   </div>
