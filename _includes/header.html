@@ -33,18 +33,18 @@
     }
 
     /* Base styling for navigation items */
-    nav ul {
+    .nav-inner ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
 
-    nav ul li {
+    .nav-inner ul li {
       margin: 0;
     }
 
-    nav ul li a {
+    .nav-inner ul li a {
       display: block;
       color: white;
       text-align: center;
@@ -62,7 +62,7 @@
 
     /* Show the hamburger icon and hide the nav links on smaller screens */
     @media (max-width: 600px) {
-      nav ul {
+      .nav-inner ul {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -72,7 +72,7 @@
         left: 0;
       }
 
-      nav ul.responsive {
+      .nav-inner ul.responsive {
         display: flex;
       }
 
