@@ -1,23 +1,65 @@
 ---
 layout: default
-title: Ji hann Hong | Contact
+title: Ji Hann Hong | Contact
 ---
 <head>
   <style>
-    /* Styling for the buttons */
+    /* Container for email box and buttons */
+    .email-container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #f3f4f6;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 16px;
+      color: #333;
+      position: relative;
+      width: fit-content;
+      margin-top: 20px;
+    }
+
+    /* Email display styling */
+    .email-box {
+      padding: 10px;
+      color: #333;
+      background-color: #e5e7eb;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      width: max-content;
+    }
+
+    /* Button styling */
     .button {
-      padding: 10px 20px;
-      margin: 5px;
+      padding: 5px 10px;
       color: white;
       background-color: #333;
       border: none;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
+      margin-left: 5px;
+      border-radius: 3px;
+    }
+
+    /* Button container at the top right */
+    .button-container {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: flex;
+      gap: 5px;
     }
   </style>
 
   <script type="text/javascript">
-    // Function to obfuscate and copy email to clipboard
+    // Function to display obfuscated email
+    function displayEmail() {
+      const user = "ji.hann.hong";
+      const domain = "gmail.com";
+      document.getElementById("email-box").textContent = user + "@" + domain;
+    }
+
+    // Function to copy obfuscated email to clipboard
     function copyEmail() {
       const user = "ji.hann.hong";
       const domain = "gmail.com";
@@ -37,21 +79,23 @@ title: Ji hann Hong | Contact
       const email = user + "@" + domain;
       window.location.href = "mailto:" + email;
     }
+
+    // Display email on page load
+    window.onload = displayEmail;
   </script>
 </head>
 
 <body>
-  <!-- Display email and buttons -->
   <h2>Contact Me</h2>
-  
-  <script type="text/javascript">
-    document.write('<a href="mailto:' + 'ji.hann.hong' + '@' + 'gmail.com">ji.hann.hong@gmail.com</a>');
-  </script>
 
-
-  <!-- Button to copy email to clipboard -->
-  <button class="button" onclick="copyEmail()">Copy Email</button>
-
-  <!-- Button to open email client with mailto link -->
-  <button class="button" onclick="mailTo()">Email Me</button>
+  <div class="email-container">
+    <!-- Email text in monospace box, populated by JavaScript -->
+    <span id="email-box" class="email-box"></span>
+    
+    <!-- Buttons at the top right corner -->
+    <div class="button-container">
+      <button class="button" onclick="copyEmail()">Copy Email</button>
+      <button class="button" onclick="mailTo()">Email Me</button>
+    </div>
+  </div>
 </body>
