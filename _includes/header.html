@@ -49,17 +49,14 @@
 
     .nav-inner ul li a {
       display: block;
+      color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
     }
 
-    .page {
-      color: white;
-    }
-
-    .current-page {
-      color: red;
+    .current {
+      background-color: red;
     }
 
     /* Hamburger icon for mobile view */
@@ -106,10 +103,10 @@
 
       <!-- Navigation Links -->
       <ul id="navbar">
-        <li><a href="/" {% if page.url == "/" %} class="current-page" {% else %} class="page" {% endif %}>Home</a></li>
-        <li><a href="/resume" {% if page.url == "/resume" %} class="current-page" {% else %} class="page" {% endif %}>Resume</a></li>
+        <li><a href="/" {% if page.url == "/" %} current {% endif %}>Home</a></li>
+        <li><a href="/resume" {% if page.url == "/resume" %} current {% endif %}>Resume</a></li>
         <li><a href="https://github.com/jhong16">GitHub</a></li>
-        <li><a href="/contact" {% if page.url == "/contact" %} class="current-page" {% else %} class="page" {% endif %}>Contact</a></li>
+        <li><a href="/contact" {% if page.url == "/contact" %} current {% endif %}>Contact</a></li>
       </ul>
     </div>
   </div>
