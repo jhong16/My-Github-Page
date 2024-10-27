@@ -57,6 +57,7 @@
 
     .current {
       background-color: red;
+      color: aqua;
     }
 
     /* Hamburger icon for mobile view */
@@ -103,10 +104,10 @@
 
       <!-- Navigation Links -->
       <ul id="navbar">
-        <li><a href="/" {% if page.url == "/" %} current {% endif %}>Home</a></li>
-        <li><a href="/resume" {% if page.url == "/resume" %} current {% endif %}>Resume</a></li>
+        <li><a href="/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
+        <li><a href="/resume" class="{% if page.url == '/resume' %}current{% endif %}">Resume</a></li>
         <li><a href="https://github.com/jhong16">GitHub</a></li>
-        <li><a href="/contact" {% if page.url == "/contact" %} current {% endif %}>Contact</a></li>
+        <li><a href="/contact" class="{% if page.url == '/contact' %}current{% endif %}">Contact</a></li>
       </ul>
     </div>
   </div>
