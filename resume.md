@@ -71,42 +71,38 @@ url: /resume
   let pageNum = 1;
   let pageIsRendering = false;
   let pageNumPending = null;
+  let scale = 1.5; // Initial zoom scale
 
+  // Render the page with a given scale
+  function renderPage(num) {
+    pageIsRendering = true;
 
-
-  function renderPage(num, scale = 1.5) {
+    // Get page
     pdfDoc.getPage(num).then((page) => {
       const viewport = page.getViewport({ scale });
-      
-      pageIsRendering = true;
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
 
-      // Get page
-      pdfDoc.getPage(num).then((page) => {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+      const renderCtx = {
+        canvasContext: ctx,
+        viewport,
+      };
 
-        const renderCtx = {
-          canvasContext: ctx,
-          viewport,
-        };
+      page.render(renderCtx).promise.then(() => {
+        pageIsRendering = false;
 
-        page.render(renderCtx).promise.then(() => {
-          pageIsRendering = false;
-
-          if (pageNumPending !== null) {
-            renderPage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-
-        // Update page counters
-        document.getElementById('page-num').textContent = num;
+        if (pageNumPending !== null) {
+          renderPage(pageNumPending);
+          pageNumPending = null;
+        }
       });
+
+      // Update page counters
+      document.getElementById('page-num').textContent = num;
     });
   }
 
-  // Check for pages rendering
+  // Queue page rendering if another render is in progress
   function queueRenderPage(num) {
     if (pageIsRendering) {
       pageNumPending = num;
@@ -115,36 +111,36 @@ url: /resume
     }
   }
 
-  // Show Previous Page
+  // Show previous page
   document.getElementById('prev-page').addEventListener('click', () => {
     if (pageNum <= 1) return;
     pageNum--;
     queueRenderPage(pageNum);
   });
 
-  // Show Next Page
+  // Show next page
   document.getElementById('next-page').addEventListener('click', () => {
     if (pageNum >= pdfDoc.numPages) return;
     pageNum++;
     queueRenderPage(pageNum);
   });
 
-  // Example zoom control
+  // Zoom in and re-render
   document.getElementById('zoom-in').addEventListener('click', () => {
     scale += 0.25;
-    renderPage(pageNum, scale);
+    renderPage(pageNum); // Re-render with updated scale
   });
+
+  // Zoom out and re-render
   document.getElementById('zoom-out').addEventListener('click', () => {
     scale = Math.max(scale - 0.25, 0.5); // minimum zoom level
-    renderPage(pageNum, scale);
+    renderPage(pageNum); // Re-render with updated scale
   });
 
-
-  // Get Document
+  // Load the PDF
   pdfjsLib.getDocument(url).promise.then((pdfDoc_) => {
     pdfDoc = pdfDoc_;
     document.getElementById('page-count').textContent = pdfDoc.numPages;
-
     renderPage(pageNum);
   });
 </script>
