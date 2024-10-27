@@ -1,5 +1,19 @@
 <head>
   <style>
+    /* Define Minima's width and spacing as CSS variables */
+    :root {
+      --content-width: 860px; /* Replace this with the value of $content-width */
+      --spacing-unit: 30px;   /* Replace this with the value of $spacing-unit */
+    }
+
+    /* Centered container for the navbar with dynamic width calculation */
+    .nav-container {
+      max-width: calc(var(--content-width) - var(--spacing-unit));
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
     /* Base styling for navigation */
     nav {
       background-color: #333;
@@ -14,11 +28,11 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      display: flex; /* Use flexbox for ul */
+      display: flex;
     }
 
     ul li {
-      margin: 0; /* Remove margin to avoid overflow */
+      margin: 0;
     }
 
     ul li a {
@@ -40,46 +54,51 @@
     /* Show the hamburger icon and hide the nav links on smaller screens */
     @media (max-width: 600px) {
       ul {
-        display: none; /* Hide the list by default */
-        flex-direction: column; /* Change layout to column for mobile */
-        width: 100%; /* Full width for the dropdown */
-        background-color: #333; /* Same background color */
-        position: absolute; /* Position the dropdown */
-        top: 60px; /* Align below the navbar */
-        left: 0; /* Align to the left */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
       }
 
       ul.responsive {
-        display: flex; /* Show the menu when toggled */
+        display: flex;
       }
 
       .hamburger {
-        display: block; /* Show hamburger icon */
+        display: block;
       }
     }
   </style>
+</head>
 
-  <nav>
-    <!-- Brand name / Title -->
-    <a href="/" style="color: white; font-size: 18px; text-decoration: none;">Ji hann Hong</a>
+<body>
+  <!-- Navigation container to control max width and centering -->
+  <div class="nav-container">
+    <nav>
+      <!-- Brand name / Title -->
+      <a href="/" style="color: white; font-size: 18px; text-decoration: none;">Ji Hann Hong</a>
 
-    <!-- Hamburger icon for mobile -->
-    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+      <!-- Hamburger icon for mobile -->
+      <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
 
-    <!-- Navigation Links -->
-    <ul id="navbar">
-      <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
-      <li><a href="/resume" style="color: white; text-decoration: none;">Resume</a></li>
-      <li><a href="https://github.com/jhong16" style="color: white; text-decoration: none;">GitHub</a></li>
-      <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
-    </ul>
-  </nav>
+      <!-- Navigation Links -->
+      <ul id="navbar">
+        <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="/resume" style="color: white; text-decoration: none;">Resume</a></li>
+        <li><a href="https://github.com/jhong16" style="color: white; text-decoration: none;">GitHub</a></li>
+        <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <script>
     /* JavaScript to toggle the menu */
     function toggleMenu() {
       var navbar = document.getElementById("navbar");
-      navbar.classList.toggle("responsive"); // Toggle responsive class
+      navbar.classList.toggle("responsive");
     }
   </script>
-</head>
+</body>
