@@ -1,17 +1,26 @@
 <head>
   <style>
-    /* Define Minima's width and spacing as CSS variables */
+    /* Define Minima’s variables as CSS custom properties */
     :root {
-      --content-width: 860px; /* Replace this with the value of $content-width */
-      --spacing-unit: 30px;   /* Replace this with the value of $spacing-unit */
+      --content-width: 860px;  /* Replace with Minima's $content-width */
+      --spacing-unit: 20px;    /* Replace with Minima's $spacing-unit */
+      --on-large: 1024px;      /* Replace with Minima's $on-large breakpoint */
     }
 
-    /* Centered container for the navbar with dynamic width calculation */
+    /* Navbar container with wrapper styling */
     .nav-container {
       max-width: calc(var(--content-width) - var(--spacing-unit));
       margin: 0 auto;
-      padding: 0 10px;
+      padding: 0 calc(var(--spacing-unit) * 0.5);
       box-sizing: border-box;
+    }
+
+    /* Apply additional padding on larger screens */
+    @media screen and (min-width: var(--on-large)) {
+      .nav-container {
+        max-width: calc(var(--content-width) - (var(--spacing-unit) * 2));
+        padding: 0 var(--spacing-unit);
+      }
     }
 
     /* Base styling for navigation */
@@ -75,7 +84,7 @@
 </head>
 
 <body>
-  <!-- Navigation container to control max width and centering -->
+  <!-- Navigation container to match Minima's wrapper width and padding -->
   <div class="nav-container">
     <nav>
       <!-- Brand name / Title -->
