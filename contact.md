@@ -3,6 +3,9 @@ layout: home
 title: Ji Hann Hong | Contact
 url: /contact
 ---
+
+# Contact
+
 <head>
   <style>
     /* Container for email box and buttons */
@@ -87,8 +90,6 @@ url: /contact
 </head>
 
 <body>
-  <h2>Contact Me</h2>
-
   <div class="email-container">
     <!-- Email text in monospace box, populated by JavaScript -->
     <span id="email-box" class="email-box"></span>
