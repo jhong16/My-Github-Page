@@ -21,7 +21,7 @@ title: Ji Hann Hong | Contact
 
     /* Email display styling */
     .email-box {
-      padding: 10px;
+      padding: 50px;
       color: #333;
       background-color: #e5e7eb;
       border: 1px solid #d1d5db;
