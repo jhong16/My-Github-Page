@@ -55,6 +55,10 @@
       text-decoration: none;
     }
 
+    .current {
+      color: red;
+    }
+
     /* Hamburger icon for mobile view */
     .hamburger {
       display: none;
@@ -99,10 +103,10 @@
 
       <!-- Navigation Links -->
       <ul id="navbar">
-        <li><a href="/" {% if page.url == "/" %} style="color: red; text-decoration: none" {% else %} style="color: white; text-decoration: none;" {% endif %}>Home</a></li>
-        <li><a href="/resume" style="color: white; text-decoration: none;">Resume</a></li>
-        <li><a href="https://github.com/jhong16" style="color: white; text-decoration: none;">GitHub</a></li>
-        <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
+        <li><a href="/" {% if page.url == "/" %} class="current" {% endif %}>Home</a></li>
+        <li><a href="/resume" {% if page.url == "/resume" %} class="current" {% endif %}>Resume</a></li>
+        <li><a href="https://github.com/jhong16">GitHub</a></li>
+        <li><a href="/contact" {% if page.url == "/contact" %} class="current" {% endif %}>Contact</a></li>
       </ul>
     </div>
   </div>
