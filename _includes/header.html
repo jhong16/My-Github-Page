@@ -130,14 +130,14 @@
 
       /* Style for the X icon */
       .hamburger.open:before {
-        content: "✖"; /* Unicode for X symbol */
+        content: "\2715"; /* Unicode for X symbol */
         font-size: 28px;
         color: white;
       }
 
       /* Hide the hamburger icon when the X is displayed */
       .hamburger:not(.open):before {
-        content: "☰"; /* Unicode for hamburger symbol */
+        content: "\2630"; /* Unicode for hamburger symbol */
       }
 
       /* Show the hamburger icon again when menu is closed */
@@ -158,7 +158,7 @@
       <a href="/" class="logo" style="color: white;">Ji hann Hong</a>
 
       <!-- Hamburger icon for mobile -->
-      <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+      <span class="hamburger" onclick="toggleMenu()"></span>
 
       <!-- Navigation Links -->
       <ul id="navbar">
