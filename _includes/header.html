@@ -79,17 +79,32 @@
       font-size: 28px;
       cursor: pointer;
       color: white;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     /* When the menu is open */
     .hamburger.open {
       transform: rotate(90deg); /* Optional: rotate the icon */
+      opacity: 0;
     }
 
     /* Style for the X icon */
     .hamburger.open:before {
       content: "✖"; /* Unicode for X symbol */
+      font-size: 28px;
+      color: white;
+    }
+
+    /* Show the X icon */
+    .hamburger.open {
+      display: block; /* Keep the X icon visible */
+    }
+
+    /* Show the hamburger icon again when menu is closed */
+    .hamburger:not(.open) {
+      display: block; /* Keep hamburger icon visible when not open */
+      transform: rotate(0); /* Reset rotation */
+      opacity: 1;
     }
 
     @media (prefers-reduced-motion: reduce) {
