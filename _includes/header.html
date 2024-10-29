@@ -59,7 +59,7 @@
       text-align: center;
       padding: 7px 16px;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
     }
     
     .nav-inner ul li a.current {
@@ -75,10 +75,21 @@
     
     /* Hamburger icon for mobile view */
     .hamburger {
-      display: none;
+      display: none; /* Hidden for Large Screens */
       font-size: 28px;
       cursor: pointer;
       color: white;
+      transition: transform 0.2s ease;
+    }
+
+    /* When the menu is open */
+    .hamburger.open {
+      transform: rotate(90deg); /* Optional: rotate the icon */
+    }
+
+    /* Style for the X icon */
+    .hamburger.open:before {
+      content: "✖"; /* Unicode for X symbol */
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -150,7 +161,9 @@
     /* JavaScript to toggle the menu */
     function toggleMenu() {
       var navbar = document.getElementById("navbar");
+      var hamburger = document.querySelector(".hamburger");
       navbar.classList.toggle("responsive");
+      hamburger.classList.toggle("open"); // Toggle the class
     }
   </script>
 </body>
