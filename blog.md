@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Blog
+title: Ji Hann Hong | Blog
+permalink: /blog/
 hide_header: true
 ---
 
