@@ -10,6 +10,10 @@ My name is Ji hann Hong.
 
 I am a software engineer with >4 years of experience. I began in the security domain but have rapidly expanded interests and expertise in full stack development.
 
+## Latest News
+
+Check out my latest blog post: [{{ site.posts.first.title }}]({{ site.posts.first.url }}) - {{ site.posts.first.date | date: "%B %d, %Y" }}
+
 ## Featured Experience
 
 ### Security Stack in Server Applications
