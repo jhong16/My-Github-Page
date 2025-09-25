@@ -1,0 +1,67 @@
+/* Container for each post card */
+.post-card {
+background: #fff;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+padding: 1.5rem;
+margin-bottom: 2rem;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.post-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Title */
+.post-title {
+margin: 0 0 0.5rem 0;
+font-size: 1.4rem;
+font-weight: 600;
+}
+.post-title a {
+color: #222;
+text-decoration: none;
+}
+.post-title a:hover {
+color: #007acc; /* change to your accent color */
+}
+
+/* Date */
+.post-date {
+font-size: 0.9rem;
+color: #666;
+margin-bottom: 1rem;
+}
+
+/* Thumbnail */
+.post-thumb {
+display: block;
+max-width: 100%;
+height: auto;
+border-radius: 8px;
+margin: 0 0 1rem 0;
+}
+
+/* Excerpt */
+.post-excerpt {
+color: #333;
+margin-bottom: 1.25rem;
+line-height: 1.5;
+}
+
+/* Read More link */
+.read-more {
+display: inline-block;
+padding: 0.5rem 1rem;
+background: #007acc; /* accent color */
+color: #fff;
+border-radius: 6px;
+font-weight: 500;
+text-decoration: none;
+transition: background 0.2s ease;
+}
+.read-more:hover {
+background: #005fa3;
+}

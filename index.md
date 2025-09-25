@@ -12,7 +12,9 @@ I am a software engineer with >4 years of experience. I began in the security do
 
 ## Latest News
 
-Check out my latest blog post: [{{ site.posts.first.title }}]({{ site.posts.first.url }}) - {{ site.posts.first.date | date: "%B %d, %Y" }}
+Check out my latest blog post: 
+{% include post-teaser.md post=site.posts.first %}
+
 
 ## Featured Experience
 
