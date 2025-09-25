@@ -3,6 +3,8 @@ author:
   name: Ji hann Hong
   email: ji.hann.hong@gmail.com
 
+theme: jekyll-theme-cayman
+
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >

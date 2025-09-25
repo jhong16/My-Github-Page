@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: default
 title: Ji Hann Hong | Resume
-url: /resume
+permalink: /resume/
+hide_header: true
 ---
 
 # Resume

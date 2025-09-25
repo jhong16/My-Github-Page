@@ -164,10 +164,14 @@
 
       <!-- Navigation Links -->
       <ul id="navbar">
-        <li><a href="/" {% if page.url == '/' %}class="current"{% endif %}>Home</a></li>
-        <li><a href="/resume" {% if page.url == '/resume.html' %}class="current"{% endif %}>Resume</a></li>
-        <li><a href="/github" {% if page.url == '/github.html' %}class="current"{% endif %}>GitHub</a></li>
-        <li><a href="/contact" {% if page.url == '/contact.html' %}class="current"{% endif %}>Contact</a></li>
+        {% for item in site.data.navigation %}
+          <li>
+            <a href="{{ item.url | relative_url }}"
+              {% if page.url == item.url %}class="current"{% endif %}>
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>    
     </div>
   </div>

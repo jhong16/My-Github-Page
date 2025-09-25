@@ -1,5 +1,6 @@
 ---
-layout: home
+layout: contact
 title: Ji Hann Hong | Contact
-url: /contact
+url: /contact/
+hide_header: true
 ---

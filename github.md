@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: default
 title: Ji Hann Hong | GitHub
-url: /github
+permalink: /github/
+hide_header: true
 ---
 
 # GitHub
