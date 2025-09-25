@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Not all those who wander are lost."
+title: "Website deployment is left as an exercise to the reader"
 date: 2025-09-24
 categories: jekyll blog
 hide_header: true
@@ -69,4 +69,4 @@ Getting through some of the slog of just getting a goal off the ground, I get to
 
 The back and forth of generally good gists of LLMs makes it way easier to keep up a flow of development. LLM conversions outpace internet search and stack overflow because it maintains a style of communication, there's context I don't have to remember to be overly pedantic about a question, I can ask the dumb version of the question first, etc. I do end up treasuring popular tools over the right tools sometimes because LLMs more than make up for it in terms of providing support.
 
-This all leads to a conclusion that this was a time and place for an LLM. I could build out an exercise of learning with a real result at the end, which is fun.
+This all leads to a conclusion that this was a time and place for an LLM. I could build out an exercise of learning with a real result at the end, which is fun!
