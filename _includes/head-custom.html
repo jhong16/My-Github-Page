@@ -60,10 +60,17 @@
 
     /* Navbar container to center content */
     .nav-container {
+      position: fixed;       /* keeps navbar at top when scrolling */
+      top: 0;
+      left: 0;
       width: 100%;
       height: var(--nav-height);
       align-content: center;
       background-color: var(--color-nav-bg); /* Full-width background */
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 20px var(--color-shadow);
+      z-index: 1000;
+      transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     /* Inner wrapper for content alignment and max width */
@@ -85,14 +92,16 @@
       }
     }
 
-    .nav-inner .logo {
-      text-decoration: none;
-    }
-
     .logo {
       font-size: 26px;
       font-weight: 600;
+      text-decoration: none;
       color: var(--color-logo);
+      transition: font-size 0.3s ease, transform 0.3s ease; /* smooth transition */
+    }
+
+    .shrink .logo {
+      font-size: 20px; 
     }
 
     /* Base styling for navigation items */
@@ -134,6 +143,7 @@
       background-color: var(--color-bg);
       color: var(--color-text);
       transition: background-color 0.3s ease, color 0.3s ease;
+      padding-top: var(--nav-height);
     }
 
     /* Highlight Widget */
@@ -315,5 +325,20 @@
       navbar.classList.toggle("responsive");
       hamburger.classList.toggle("open"); // Toggle the class
     }
+
+    const navContainer = document.querySelector('.nav-container');
+    const shrinkOn = 80; // scroll distance in px before shrinking
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > shrinkOn) {
+        navContainer.style.height = '50px';      // shrink height
+        navContainer.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        navContainer.classList.add('shrink');
+      } else {
+        navContainer.style.height = '60px';      // original height
+        navContainer.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+        navContainer.classList.remove('shrink');
+      }
+    });
   </script>
 </body>
