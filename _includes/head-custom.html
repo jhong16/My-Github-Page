@@ -17,6 +17,11 @@
       --color-border: rgba(0,0,0,0.1);
       --color-shadow: rgba(0,0,0,0.1);
       --color-logo: #159957;
+  
+      /* Light mode Page Header */
+      --header-bg-color: #159957;
+      --header-bg-color-secondary: #155799;
+      --header-bg-color-tertiary: #FF6B6B;
 
       /* Light mode Card Widget */
       --card-bg: #FAFAFA;
@@ -144,6 +149,19 @@
       color: var(--color-text);
       transition: background-color 0.3s ease, color 0.3s ease;
       padding-top: var(--nav-height);
+    }
+
+    /* Home Page Header */
+    .page-header {
+        background: linear-gradient(120deg, var(--header-bg-color), var(--header-bg-color-secondary), var(--header-bg-color-tertiary));
+        background-size: 600% 600%;
+        animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Highlight Widget */
