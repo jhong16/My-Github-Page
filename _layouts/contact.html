@@ -13,7 +13,7 @@ layout: default
     font-size: 16px;
     color: #333;
     position: relative;
-    width: fit-content;
+    width: 100%;
     margin-top: 20px;
   }
 
@@ -24,7 +24,7 @@ layout: default
     background-color: #e5e7eb;
     border: 1px solid #d1d5db;
     border-radius: 5px;
-    width: max-content;
+    width: 100%;
   }
 
   /* Button styling */
@@ -71,6 +71,33 @@ layout: default
   }
 </style>
 
+<body>
+  <h1>Contact</h1>
+
+  I'm happy to talk about new opportunities!
+
+  <h2>Email</h2>
+  <div class="email-container">
+    <!-- Email text in monospace box, populated by JavaScript -->
+    <span id="email-box" class="email-box"></span>
+    
+    <!-- Buttons at the top right corner -->
+    <div class="button-container">
+      <button class="button" onclick="copyEmail()">&#x29C9; Copy Email</button>
+      <button class="button" onclick="mailTo()">@ Email Me</button>
+    </div>
+  </div>
+
+  <h2>LinkedIn</h2>
+  <div class="email-container">
+    <span id="linkedin-box" class="email-box"></span>
+    <div class="button-container">
+      <button class="button" onclick="copyLinkedIn()">&#x29C9; Copy LinkedIn</button>
+      <button class="button" onclick="goToLinkedIn()">&#x2197; Go to LinkedIn</button>
+    </div>
+  </div>
+</body>
+
 <script type="text/javascript">
   // Function to display obfuscated email
   function displayEmail() {
@@ -100,22 +127,31 @@ layout: default
     window.location.href = "mailto:" + email;
   }
 
-  // Display email on page load
-  window.onload = displayEmail;
-</script>
+  // Function to display obfuscated email
+  function displayLinkedIn() {
+    const linkedIn = "https://www.linkedin.com/in/ji-hann-nathan-hong";
+    document.getElementById("linkedin-box").textContent = linkedIn;
+  }
 
-
-<body>
-  <h1>Contact</h1>
-
-  <div class="email-container">
-    <!-- Email text in monospace box, populated by JavaScript -->
-    <span id="email-box" class="email-box"></span>
+  // Function to copy linkedIn to clipboard
+  function copyLinkedIn() {
+    const linkedIn = "https://www.linkedin.com/in/ji-hann-nathan-hong";
     
-    <!-- Buttons at the top right corner -->
-    <div class="button-container">
-      <button class="button" onclick="copyEmail()">&#x29C9; Copy Email</button>
-      <button class="button" onclick="mailTo()">@ Email Me</button>
-    </div>
-  </div>
-</body>
+    navigator.clipboard.writeText(linkedIn).then(() => {
+      alert("LinkedIn copied to clipboard!");
+    }).catch(err => {
+      alert("Failed to copy LinkedIn.");
+    });
+  }
+
+  // Function to go to linkedIn address
+  function goToLinkedIn() {
+    const linkedIn = "https://www.linkedin.com/in/ji-hann-nathan-hong";
+    window.location.href = linkedIn;
+  }
+
+  window.onload = function () {
+    displayEmail();
+    displayLinkedIn();
+  };
+</script>
