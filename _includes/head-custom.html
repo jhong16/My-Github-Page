@@ -331,11 +331,11 @@
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > shrinkOn) {
-        navContainer.style.height = '50px';      // shrink height
+        document.documentElement.style.setProperty('--nav-height', '50px'); // shrunk height
         navContainer.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
         navContainer.classList.add('shrink');
       } else {
-        navContainer.style.height = '60px';      // original height
+        document.documentElement.style.setProperty('--nav-height', '60px'); // original height
         navContainer.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
         navContainer.classList.remove('shrink');
       }
