@@ -8,7 +8,7 @@ permalink: /
 
 My name is Ji hann Hong.
 
-I am a software engineer with >4 years of experience. I began in the security domain but have rapidly expanded interests and expertise in full stack development.
+I have been a software engineer since 2021. I began in the security domain, building applications for directory services, vulnerability lifecycles, and primarily, authentication services. Over time, I have broadened my interests into full stack development, mainly through self-exploration after work and exercises like homelabbing. My goal is to share my latest interests and work in building and using various aspects of AI applications including domain knowledge modeling and better domain knowledge retrieval.
 
 ## Latest News
 
