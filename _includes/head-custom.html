@@ -6,6 +6,56 @@
       --spacing-unit: 30px;    /* Replace with Minima's $spacing-unit */
       --on-large: 1024px;      /* Replace with Minima's $on-large breakpoint */
       --nav-height: 60px;
+
+      /* Light mode Base */
+      --color-bg: #EEEEEE;
+      --color-nav-bg: #EEEEEE;
+      --color-text: #111111;
+      --color-link: #111111;
+      --color-link-hover: #a1a1a1;
+      --color-link-current: #e0e0e0;
+      --color-border: rgba(0,0,0,0.1);
+      --color-shadow: rgba(0,0,0,0.1);
+      --color-logo: #159957;
+
+      /* Light mode Card Widget */
+      --card-bg: #FAFAFA;
+      --card-text: #111111;
+      --card-date: #555555;
+      --card-link: #1a73e8;
+      --card-link-hover: #0c51b8;
+      --card-border: #e0e0e0;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+
+      /* Markdown Highlight Widget */
+      --highlight-bg: #FAFAFA;
+    }
+
+    /* Dark mode override */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #111111;
+        --color-nav-bg: #111111;
+        --color-text: #f5f5f5;
+        --color-link: #f5f5f5;
+        --color-link-hover: #676767;
+        --color-link-current: #333333;
+        --color-border: rgba(255,255,255,0.1);
+        --color-shadow: rgba(0,0,0,0.5);
+        --color-logo: #159957;
+
+        /* Dark mode Card Widget */
+        --card-bg: #1a1a1a;
+        --card-text: #f5f5f5;
+        --card-date: #aaaaaa;
+        --card-link: #4dabf5;
+        --card-link-hover: #1e90ff;
+        --card-border: #333333;
+        --card-shadow: rgba(0, 0, 0, 0.5);
+
+        /* Markdown Highlight Widget */
+        --highlight-bg: #222222;
+      }
     }
 
     /* Navbar container to center content */
@@ -13,12 +63,12 @@
       width: 100%;
       height: var(--nav-height);
       align-content: center;
-      background-color: #333; /* Full-width background */
+      background-color: var(--color-nav-bg); /* Full-width background */
     }
 
     /* Inner wrapper for content alignment and max width */
     .nav-inner {
-      max-width: calc(var(--content-width) - var(--spacing-unit));
+      max-width: calc(var(--content-width));
       margin: 0 auto;
       padding: 0 calc(var(--spacing-unit) * 0.5);
       display: flex;
@@ -36,8 +86,13 @@
     }
 
     .nav-inner .logo {
-      font-size: 22px; 
       text-decoration: none;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--color-logo);
     }
 
     /* Base styling for navigation items */
@@ -55,7 +110,7 @@
     }
     .nav-inner ul li a {
       display: block;
-      color: white;
+      color: var(--color-link);
       text-align: center;
       padding: 7px 16px;
       text-decoration: none;
@@ -64,22 +119,91 @@
     }
     
     .nav-inner ul li a.current {
-      background-color: #202020;
+      background-color: var(--color-link-current);
     }
     
     .nav-inner ul li a:hover {
-      background-color: #505050;
+      background-color: var(--color-link-hover);
       transform: scale(1.05);
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 10px var(--color-shadow);
     }
 
-    
+    /* Main Content */
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Highlight Widget */
+    .main-content .highlight {
+      background-color: var(--highlight-bg);
+    }
+
+    /* Card widget */
+    .post-card {
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px var(--card-shadow);
+      /* transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; */
+    }
+
+    .post-card .post-title a {
+      color: var(--card-link);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .post-card .post-title a:hover {
+      color: var(--card-link-hover);
+    }
+
+    .post-card .post-date {
+      color: var(--card-date);
+      font-size: 0.9em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .post-card .post-thumb {
+      width: 100%;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+
+    .post-card .post-excerpt {
+      margin-bottom: 12px;
+      color: var(--card-text);
+    }
+
+    .post-card .read-more {
+      display: inline-block;        /* makes the whole element clickable */
+      background-color: var(--card-link); /* full blue background */
+      color: #ffffff;               /* text color white */
+      padding: 8px 16px;            /* spacing inside the button */
+      border-radius: 8px;           /* rounded corners */
+      text-decoration: none;        /* remove underline */
+      font-weight: 500;
+      transition: background-color 0.2s ease, box-shadow 0.1s ease;
+    }
+
+    .post-card .read-more:hover {
+      background-color: var(--card-link-hover); /* darker blue on hover */
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     /* Hamburger icon for mobile view */
     .hamburger {
       display: none; /* Hidden for Large Screens */
       font-size: 28px;
       cursor: pointer;
-      color: white;
+      color: var(--color-text);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -100,7 +224,7 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #333;
+        background-color: var(--color-bg);
         position: absolute;
         top: var(--nav-height);
         left: 0;
@@ -134,7 +258,7 @@
       .hamburger.open:before {
         content: "\2715"; /* Unicode for X symbol */
         font-size: 28px;
-        color: white;
+        color: var(--color-text);
       }
 
       /* Hide the hamburger icon when the X is displayed */
@@ -150,6 +274,13 @@
       
     }
   </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple_touch.png' | relative_url }}">
+
 </head>
 
 <body>
@@ -157,7 +288,7 @@
   <div class="nav-container">
     <!-- Inner wrapper to control content alignment -->
     <div class="nav-inner">
-      <a href="/" class="logo" style="color: white;">Ji hann Hong</a>
+      <a href="/" class="logo">Ji hann Hong</a>
 
       <!-- Hamburger icon for mobile -->
       <span class="hamburger" onclick="toggleMenu()"></span>
